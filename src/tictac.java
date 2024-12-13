@@ -50,14 +50,16 @@ public class tictac {
                         positionColone = clavier.nextInt();
                         System.out.println("ligne(0,1;2) : ");
                         positionLigne = clavier.nextInt();
-                        System.out.print("Etes vous sur de votre choix ? (o/n): ");
+                        System.out.println("Etes vous sur de votre choix ? (o/n): ");
                         confirmation = clavier.nextLine();
                     } while (confirmation.equals("n") || confirmation.equals("non"));
-                    board[positionColone][positionLigne] = choixJUn;
-                    System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
-                    System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
-                    System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2]);
-                    tourJUn += 1;
+                    if(confirmation.equals("o") || confirmation.equals("oui")) {
+                        board[positionColone][positionLigne] = choixJUn;
+                        System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+                        System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+                        System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2]);
+                        tourJUn += 1;
+                    }
                 }
                 //tour Joueur 2
                 if (tourJDeux < tourJUn || tourJDeux == 0) {
@@ -67,14 +69,16 @@ public class tictac {
                         positionColone = clavier.nextInt();
                         System.out.println("ligne(0,1;2) : ");
                         positionLigne = clavier.nextInt();
-                        System.out.print("Etes vous sur de votre choix ? (o/n): ");
+                        System.out.println("Etes vous sur de votre choix ? (o/n): ");
                         confirmation = clavier.nextLine();
                     }while(confirmation.equals("n") || confirmation.equals("non"));
-                    board[positionColone][positionLigne] = choixJDeux;
-                    System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
-                    System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
-                    System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2]);
-                    tourJDeux += 1;
+                    if(confirmation.equals("o") || confirmation.equals("oui")) {
+                        board[positionColone][positionLigne] = choixJDeux;
+                        System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+                        System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+                        System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2]);
+                        tourJDeux += 1;
+                    }
                 }
                 if (board[0][0].equals("0") && board[0][1].equals("0") && board[0][2].equals("0")) {//ligne 1
                     System.out.println("Bravo " + nomJUn + " Vous avez gagné ");
